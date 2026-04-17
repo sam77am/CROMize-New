@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dashboard — Cromize</title>
+  <meta name="robots" content="noindex, nofollow" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="stylesheet" href="../css/styles.css" />
+</head>
+<body>
+<div class="app-layout">
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar" role="navigation" aria-label="App navigation">
+    <div class="sidebar-logo">
+      <a href="../index.html" style="display:flex;align-items:center;gap:10px;color:inherit">
+        <div class="nav-logo-icon" style="width:28px;height:28px"><svg viewBox="0 0 18 18" fill="none"><path d="M3 13 L7 7 L11 10 L15 3" stroke="#08080a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="15" cy="3" r="2" fill="#08080a"/></svg></div>
+        Cromize
+      </a>
+    </div>
+    <nav class="sidebar-nav">
+      <div class="sidebar-section-label">Overview</div>
+      <a href="index.html" class="sidebar-link active">
+        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="1" y="1" width="6" height="6" rx="1"/><rect x="9" y="1" width="6" height="6" rx="1"/><rect x="1" y="9" width="6" height="6" rx="1"/><rect x="9" y="9" width="6" height="6" rx="1"/></svg>
+        Dashboard
+      </a>
+      <a href="audit.html" class="sidebar-link">
+        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="8" cy="8" r="6"/><path d="M8 5v3l2 1"/></svg>
+        Audit Report
+        <span class="badge-count">7</span>
+      </a>
+      <a href="aov.html" class="sidebar-link">
+        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 12 L5 7 L9 9 L14 3"/><circle cx="14" cy="3" r="1.5" fill="currentColor"/></svg>
+        AOV Opportunities
+      </a>
+
+      <div class="sidebar-section-label">Analytics</div>
+      <a href="#" class="sidebar-link">
+        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 14V6l4-4h8v12H2z"/><path d="M6 2v4H2"/></svg>
+        Wins & History
+      </a>
+      <a href="#" class="sidebar-link">
+        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="1" y="3" width="14" height="10" rx="1.5"/><path d="M5 7h6M5 10h4"/></svg>
+        Weekly Digest
+      </a>
+
+      <div class="sidebar-section-label">Account</div>
+      <a href="settings.html" class="sidebar-link">
+        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="8" cy="8" r="2.5"/><path d="M8 1v2M8 13v2M1 8h2M13 8h2M3.05 3.05l1.41 1.41M11.54 11.54l1.41 1.41M3.05 12.95l1.41-1.41M11.54 4.46l1.41-1.41"/></svg>
+        Settings
+      </a>
+      <a href="../index.html" class="sidebar-link">
+        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 2H2v12h4M10 11l4-3-4-3M14 8H6"/></svg>
+        Back to Website
+      </a>
+    </nav>
+    <div class="sidebar-footer">
+      <div class="sidebar-store">
+        <div class="sidebar-store-icon"><svg viewBox="0 0 16 16" fill="none" stroke="var(--gold)" stroke-width="1.5"><path d="M1 4h14l-1 8H2L1 4z"/><path d="M5 4V3a2 2 0 0 1 4 0v1"/></svg></div>
+        <div>
+          <div class="sidebar-store-name">my-store.myshopify.com</div>
+          <div class="sidebar-store-plan">Growth Plan</div>
+        </div>
+      </div>
+    </div>
+  </aside>
+
+  <!-- MAIN CONTENT -->
+  <main class="app-main">
+    <header class="app-header">
+      <div>
+        <button id="sidebar-toggle" style="display:none;background:none;border:none;color:var(--text-primary);cursor:pointer;padding:4px;margin-right:var(--space-sm)" aria-label="Toggle sidebar">
+          <svg viewBox="0 0 20 20" fill="currentColor" width="20" height="20"><path fill-rule="evenodd" d="M3 5h14a1 1 0 000-2H3a1 1 0 000 2zm0 6h14a1 1 0 000-2H3a1 1 0 000 2zm0 6h14a1 1 0 000-2H3a1 1 0 000 2z" clip-rule="evenodd"/></svg>
+        </button>
+        <div class="app-header-title">Dashboard</div>
+        <div class="app-header-sub">Last audit: Today at 9:14 AM · Next refresh in 6 days</div>
+      </div>
+      <div style="display:flex;align-items:center;gap:var(--space-md)">
+        <span class="badge badge-green">● Live</span>
+        <a href="audit.html" class="btn btn-primary btn-sm">View Full Audit →</a>
+      </div>
+    </header>
+
+    <div class="app-body">
+
+      <!-- Alert banner -->
+      <div class="alert alert-gold mb-xl">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="var(--gold)" stroke-width="1.5"><circle cx="8" cy="8" r="6"/><path d="M8 5v3M8 11v.5" stroke-linecap="round"/></svg>
+        <span><strong>1 new high-priority issue detected</strong> since your last visit — your checkout shipping reveal is costing an estimated $840/month. <a href="audit.html" style="color:var(--gold);font-weight:600;text-decoration:underline">See fix →</a></span>
+      </div>
+
+      <!-- Store Health Score + Metrics -->
+      <div style="display:grid;grid-template-columns:auto 1fr;gap:var(--space-xl);align-items:center;background:var(--bg-card);border:1px solid var(--border);border-radius:var(--r-xl);padding:var(--space-xl);margin-bottom:var(--space-xl);">
+        <div style="text-align:center;padding-right:var(--space-xl);border-right:1px solid var(--border);">
+          <div style="font-size:0.75rem;font-weight:600;text-transform:uppercase;letter-spacing:0.06em;color:var(--text-secondary);margin-bottom:var(--space-md)">Store Health Score</div>
+          <div class="score-ring" data-score="68" style="margin:0 auto">
+            <svg viewBox="0 0 120 120" width="120" height="120">
+              <circle class="track" cx="60" cy="60" r="52"/>
+              <circle class="fill" cx="60" cy="60" r="52" stroke-dasharray="326.73" stroke-dashoffset="326.73"/>
+            </svg>
+            <div class="label">
+              <strong style="color:var(--gold)">68</strong>
+              <span>/ 100</span>
+            </div>
+          </div>
+          <div style="margin-top:var(--space-sm)"><span class="badge badge-gold">Needs Attention</span></div>
+        </div>
+        <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:var(--space-lg)">
+          <div>
+            <div style="font-size:0.75rem;font-weight:600;text-transform:uppercase;letter-spacing:0.06em;color:var(--text-secondary);margin-bottom:6px">Conversion Rate</div>
+            <div style="font-family:var(--font-display);font-size:1.8rem;font-weight:800;line-height:1">2.1%</div>
+            <div style="font-size:0.78rem;color:var(--green);margin-top:4px">↑ from 1.6% (30 days ago)</div>
+            <div class="progress-bar" style="margin-top:8px"><div class="progress-fill" data-pct="42" style="background:var(--green);width:0%"></div></div>
+          </div>
+          <div>
+            <div style="font-size:0.75rem;font-weight:600;text-transform:uppercase;letter-spacing:0.06em;color:var(--text-secondary);margin-bottom:6px">Avg. Order Value</div>
+            <div style="font-family:var(--font-display);font-size:1.8rem;font-weight:800;line-height:1">$81</div>
+            <div style="font-size:0.78rem;color:var(--green);margin-top:4px">↑ from $64 (30 days ago)</div>
+            <div class="progress-bar" style="margin-top:8px"><div class="progress-fill" data-pct="54" style="background:var(--green);width:0%"></div></div>
+          </div>
+          <div>
+            <div style="font-size:0.75rem;font-weight:600;text-transform:uppercase;letter-spacing:0.06em;color:var(--text-secondary);margin-bottom:6px">Revenue Recovered</div>
+            <div style="font-family:var(--font-display);font-size:1.8rem;font-weight:800;line-height:1;color:var(--gold)">$3,460</div>
+            <div style="font-size:0.78rem;color:var(--text-secondary);margin-top:4px">From 2 fixes this month</div>
+            <div class="progress-bar" style="margin-top:8px"><div class="progress-fill" data-pct="69" style="background:var(--gold);width:0%"></div></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Top Issues Preview -->
+      <div style="display:grid;grid-template-columns:1fr 340px;gap:var(--space-xl);">
+        <div>
+          <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:var(--space-lg);">
+            <h2 style="font-family:var(--font-display);font-size:1.1rem;font-weight:700">Open Issues <span style="font-size:0.8rem;font-weight:400;color:var(--text-secondary)">(7 total)</span></h2>
+            <a href="audit.html" class="btn btn-ghost btn-sm">View all →</a>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:var(--space-sm)">
+
+            <div class="issue-card">
+              <div class="issue-severity high"></div>
+              <div class="issue-content">
+                <div style="display:flex;align-items:center;gap:8px;margin-bottom:4px">
+                  <span class="badge badge-red" style="font-size:0.65rem;padding:2px 7px">High Priority</span>
+                  <span class="issue-difficulty">New this week</span>
+                </div>
+                <div class="issue-title">Shipping cost reveals at checkout — not in cart</div>
+                <div class="issue-desc">48% of cart abandonments are caused by surprise shipping costs. Yours reveals the rate only at checkout, after the customer has already committed mentally but before they've paid.</div>
+                <div class="issue-meta">
+                  <span class="issue-impact">~$840/mo estimated impact</span>
+                  <span class="issue-difficulty">Medium · ~2hr fix</span>
+                </div>
+                <div class="issue-actions">
+                  <a href="audit.html" class="btn btn-sm btn-ghost">View Steps</a>
+                  <button class="btn btn-sm btn-secondary" data-mark-fixed>Mark Fixed</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="issue-card">
+              <div class="issue-severity medium"></div>
+              <div class="issue-content">
+                <div style="display:flex;align-items:center;gap:8px;margin-bottom:4px">
+                  <span class="badge badge-gold" style="font-size:0.65rem;padding:2px 7px">Medium Priority</span>
+                </div>
+                <div class="issue-title">Product descriptions missing benefits above the fold</div>
+                <div class="issue-desc">Your top 3 selling products lead with features, not benefits. "100% Merino Wool" is a feature. "Stays warm even when wet, never itches" is a benefit. The conversion gap between the two is measurable.</div>
+                <div class="issue-meta">
+                  <span class="issue-impact">~$520/mo estimated impact</span>
+                  <span class="issue-difficulty">Easy · ~1hr per product</span>
+                </div>
+                <div class="issue-actions">
+                  <a href="audit.html" class="btn btn-sm btn-ghost">View Steps</a>
+                  <button class="btn btn-sm btn-secondary" data-mark-fixed>Mark Fixed</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="issue-card" style="opacity:0.6">
+              <div class="issue-severity low"></div>
+              <div class="issue-content">
+                <div style="display:flex;align-items:center;gap:8px;margin-bottom:4px">
+                  <span class="badge badge-green" style="font-size:0.65rem;padding:2px 7px">Low Priority</span>
+                  <span class="badge badge-neutral" style="font-size:0.65rem;padding:2px 7px">Fixed ✓</span>
+                </div>
+                <div class="issue-title">Add to Cart button hidden on iPhone SE (fixed)</div>
+                <div class="issue-desc">Resolved Apr 3 — CVR improvement confirmed: +0.5%</div>
+                <div class="issue-meta">
+                  <span class="issue-impact" style="color:var(--green)">+$2,100/mo revenue recovered</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right column -->
+        <div style="display:flex;flex-direction:column;gap:var(--space-lg)">
+          <!-- AOV teaser -->
+          <div class="card card-gold">
+            <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:var(--space-md)">
+              <h3 style="font-family:var(--font-display);font-size:0.95rem;font-weight:700">AOV Opportunities</h3>
+              <a href="aov.html" class="btn btn-ghost btn-sm">View all</a>
+            </div>
+            <div style="display:flex;flex-direction:column;gap:10px">
+              <div style="padding:10px;background:var(--bg-base);border-radius:var(--r-md)">
+                <div style="font-weight:600;font-size:0.85rem;margin-bottom:3px">Yoga Mat + Block Bundle</div>
+                <div style="font-size:0.75rem;color:var(--text-secondary)">41% co-purchase rate · Potential: <span style="color:var(--gold);font-weight:600">+$24/order</span></div>
+              </div>
+              <div style="padding:10px;background:var(--bg-base);border-radius:var(--r-md)">
+                <div style="font-weight:600;font-size:0.85rem;margin-bottom:3px">Resistance Band + Guide</div>
+                <div style="font-size:0.75rem;color:var(--text-secondary)">28% co-purchase rate · Potential: <span style="color:var(--gold);font-weight:600">+$18/order</span></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Score breakdown -->
+          <div class="card">
+            <h3 style="font-family:var(--font-display);font-size:0.95rem;font-weight:700;margin-bottom:var(--space-md)">Score Breakdown</h3>
+            <div style="display:flex;flex-direction:column;gap:12px">
+              <div>
+                <div style="display:flex;justify-content:space-between;margin-bottom:5px"><span class="body-xs text-secondary">Mobile Experience</span><span class="body-xs" style="font-weight:600;color:var(--gold)">58/100</span></div>
+                <div class="progress-bar"><div class="progress-fill" data-pct="58" style="background:var(--gold);width:0%"></div></div>
+              </div>
+              <div>
+                <div style="display:flex;justify-content:space-between;margin-bottom:5px"><span class="body-xs text-secondary">Checkout Flow</span><span class="body-xs" style="font-weight:600;color:var(--red)">44/100</span></div>
+                <div class="progress-bar"><div class="progress-fill" data-pct="44" style="background:var(--red);width:0%"></div></div>
+              </div>
+              <div>
+                <div style="display:flex;justify-content:space-between;margin-bottom:5px"><span class="body-xs text-secondary">Trust & Social Proof</span><span class="body-xs" style="font-weight:600;color:var(--green)">82/100</span></div>
+                <div class="progress-bar"><div class="progress-fill" data-pct="82" style="background:var(--green);width:0%"></div></div>
+              </div>
+              <div>
+                <div style="display:flex;justify-content:space-between;margin-bottom:5px"><span class="body-xs text-secondary">AOV Optimization</span><span class="body-xs" style="font-weight:600;color:var(--gold)">61/100</span></div>
+                <div class="progress-bar"><div class="progress-fill" data-pct="61" style="background:var(--gold);width:0%"></div></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Upgrade nudge (only for starter) -->
+          <div class="card" style="border-color:rgba(245,197,24,0.2);background:linear-gradient(135deg,var(--bg-card),rgba(245,197,24,0.03))">
+            <div class="badge badge-gold mb-md">Growth Plan</div>
+            <h3 style="font-size:0.9rem;font-weight:600;margin-bottom:var(--space-sm)">Upgrade to unlock weekly monitoring</h3>
+            <p class="body-xs text-secondary mb-md">Get notified the moment a new issue is detected — before it costs you more sales.</p>
+            <a href="../pricing.html" class="btn btn-primary btn-sm w-full">Upgrade to Growth →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+</div>
+<script src="../js/main.js"></script>
+<script>document.getElementById('sidebar-toggle').style.display='block';</script>
+</body>
+</html>

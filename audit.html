@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Audit Report — Cromize</title>
+  <meta name="robots" content="noindex, nofollow" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="stylesheet" href="../css/styles.css" />
+</head>
+<body>
+<div class="app-layout">
+  <aside class="sidebar">
+    <div class="sidebar-logo"><a href="../index.html" style="display:flex;align-items:center;gap:10px;color:inherit"><div class="nav-logo-icon" style="width:28px;height:28px"><svg viewBox="0 0 18 18" fill="none"><path d="M3 13 L7 7 L11 10 L15 3" stroke="#08080a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="15" cy="3" r="2" fill="#08080a"/></svg></div>Cromize</a></div>
+    <nav class="sidebar-nav">
+      <div class="sidebar-section-label">Overview</div>
+      <a href="index.html" class="sidebar-link"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="1" y="1" width="6" height="6" rx="1"/><rect x="9" y="1" width="6" height="6" rx="1"/><rect x="1" y="9" width="6" height="6" rx="1"/><rect x="9" y="9" width="6" height="6" rx="1"/></svg>Dashboard</a>
+      <a href="audit.html" class="sidebar-link active"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="8" cy="8" r="6"/><path d="M8 5v3l2 1"/></svg>Audit Report<span class="badge-count">7</span></a>
+      <a href="aov.html" class="sidebar-link"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 12 L5 7 L9 9 L14 3"/><circle cx="14" cy="3" r="1.5" fill="currentColor"/></svg>AOV Opportunities</a>
+      <div class="sidebar-section-label">Analytics</div>
+      <a href="#" class="sidebar-link"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 14V6l4-4h8v12H2z"/><path d="M6 2v4H2"/></svg>Wins & History</a>
+      <a href="#" class="sidebar-link"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="1" y="3" width="14" height="10" rx="1.5"/><path d="M5 7h6M5 10h4"/></svg>Weekly Digest</a>
+      <div class="sidebar-section-label">Account</div>
+      <a href="settings.html" class="sidebar-link"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="8" cy="8" r="2.5"/><path d="M8 1v2M8 13v2M1 8h2M13 8h2M3.05 3.05l1.41 1.41M11.54 11.54l1.41 1.41M3.05 12.95l1.41-1.41M11.54 4.46l1.41-1.41"/></svg>Settings</a>
+      <a href="../index.html" class="sidebar-link"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 2H2v12h4M10 11l4-3-4-3M14 8H6"/></svg>Back to Website</a>
+    </nav>
+    <div class="sidebar-footer"><div class="sidebar-store"><div class="sidebar-store-icon"><svg viewBox="0 0 16 16" fill="none" stroke="var(--gold)" stroke-width="1.5"><path d="M1 4h14l-1 8H2L1 4z"/><path d="M5 4V3a2 2 0 0 1 4 0v1"/></svg></div><div><div class="sidebar-store-name">my-store.myshopify.com</div><div class="sidebar-store-plan">Growth Plan</div></div></div></div>
+  </aside>
+
+  <main class="app-main">
+    <header class="app-header">
+      <div><div class="app-header-title">Audit Report</div><div class="app-header-sub">Full analysis of your store · 7 open issues · Last run: Today 9:14 AM</div></div>
+      <div style="display:flex;align-items:center;gap:var(--space-md)">
+        <button class="btn btn-secondary btn-sm" onclick="window.showToast('Audit refresh queued — check back in 30 minutes.','info')">↻ Re-run Audit</button>
+        <button class="btn btn-ghost btn-sm" onclick="window.showToast('PDF report downloaded.')">↓ Export PDF</button>
+      </div>
+    </header>
+
+    <div class="app-body">
+      <!-- Score bar -->
+      <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:var(--space-md);margin-bottom:var(--space-xl)">
+        <div class="metric-card"><div class="metric-card-label">Store Health Score</div><div class="metric-card-value" style="color:var(--gold)">68<span style="font-size:1rem;font-weight:400;color:var(--text-secondary)">/100</span></div><div class="metric-card-change" style="color:var(--text-secondary)">Needs Attention</div></div>
+        <div class="metric-card"><div class="metric-card-label">Open Issues</div><div class="metric-card-value">7</div><div class="metric-card-change down">↑ 1 new this week</div></div>
+        <div class="metric-card"><div class="metric-card-label">Issues Fixed</div><div class="metric-card-value" style="color:var(--green)">2</div><div class="metric-card-change up">↑ This month</div></div>
+        <div class="metric-card"><div class="metric-card-label">Est. Revenue at Risk</div><div class="metric-card-value">$4.1K<span style="font-size:1rem;color:var(--text-secondary)">/mo</span></div><div class="metric-card-change down">From 7 open issues</div></div>
+      </div>
+
+      <!-- Filters -->
+      <div style="display:flex;align-items:center;gap:var(--space-md);margin-bottom:var(--space-lg);flex-wrap:wrap">
+        <div class="tabs">
+          <div class="tab active" data-tab="all">All Issues (7)</div>
+          <div class="tab" data-tab="high">High Priority (2)</div>
+          <div class="tab" data-tab="medium">Medium (3)</div>
+          <div class="tab" data-tab="fixed">Fixed (2)</div>
+        </div>
+        <div style="margin-left:auto;display:flex;gap:var(--space-sm)">
+          <select class="input-field" style="padding:8px 12px;font-size:0.8rem;width:auto">
+            <option>Sort: Revenue Impact</option>
+            <option>Sort: Difficulty</option>
+            <option>Sort: Category</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Issues list -->
+      <div style="display:flex;flex-direction:column;gap:var(--space-sm)">
+
+        <div class="issue-card">
+          <div class="issue-severity high"></div>
+          <div class="issue-content">
+            <div style="display:flex;align-items:center;gap:8px;margin-bottom:6px"><span class="badge badge-red" style="font-size:0.65rem;padding:2px 7px">High · Checkout</span><span class="badge badge-neutral" style="font-size:0.65rem;padding:2px 7px">New</span></div>
+            <div class="issue-title">Shipping cost reveals only at checkout — not in cart</div>
+            <div class="issue-desc">Your $7.99 flat-rate shipping isn't shown until the customer has already entered their email on the checkout screen. This is the #1 driver of last-minute checkout abandonment. Industry data shows 48% of cart abandonment is caused by surprise costs discovered at checkout. Your cart abandonment rate (71%) is above average — this is a primary contributor.</div>
+            <div class="issue-meta"><span class="issue-impact">~$840/mo estimated impact</span><span class="issue-difficulty">Medium difficulty · ~2 hours</span><span class="badge badge-neutral" style="font-size:0.65rem">No dev needed</span></div>
+            <div style="background:var(--bg-base);border-radius:var(--r-md);padding:var(--space-md);margin-top:var(--space-md)">
+              <div style="font-size:0.75rem;font-weight:600;text-transform:uppercase;letter-spacing:0.06em;color:var(--text-secondary);margin-bottom:var(--space-sm)">Fix Instructions</div>
+              <ol style="display:flex;flex-direction:column;gap:8px;padding-left:16px">
+                <li class="body-xs text-secondary">In Shopify Admin, go to Online Store → Themes → Customize your current theme</li>
+                <li class="body-xs text-secondary">Navigate to the Cart page template</li>
+                <li class="body-xs text-secondary">Look for "Shipping estimate" or "Shipping calculator" section — enable it if hidden</li>
+                <li class="body-xs text-secondary">If your theme doesn't support it natively, add the free "Estimated Shipping" app from Shopify's App Store</li>
+                <li class="body-xs text-secondary">Test the cart drawer and standalone cart page on mobile to confirm the estimate is visible before checkout</li>
+              </ol>
+            </div>
+            <div class="issue-actions"><button class="btn btn-sm btn-primary" data-mark-fixed>Mark as Fixed</button><button class="btn btn-sm btn-secondary" onclick="window.showToast('Reminder set for tomorrow at 9AM.','info')">Set Reminder</button></div>
+          </div>
+        </div>
+
+        <div class="issue-card">
+          <div class="issue-severity high"></div>
+          <div class="issue-content">
+            <div style="display:flex;align-items:center;gap:8px;margin-bottom:6px"><span class="badge badge-red" style="font-size:0.65rem;padding:2px 7px">High · Mobile UX</span></div>
+            <div class="issue-title">Product description text too small on mobile (11px detected)</div>
+            <div class="issue-desc">Your product description renders at 11px on screens below 390px width. The recommended minimum for readability is 16px. This affects iPhone SE, iPhone 13 Mini, and older Android models — which together represent approximately 14% of your mobile traffic. Small text forces users to pinch-zoom, which dramatically increases bounce rate.</div>
+            <div class="issue-meta"><span class="issue-impact">~$620/mo estimated impact</span><span class="issue-difficulty">Easy · ~30 min</span><span class="badge badge-neutral" style="font-size:0.65rem">May need dev</span></div>
+            <div class="issue-actions"><button class="btn btn-sm btn-primary" data-mark-fixed>Mark as Fixed</button><button class="btn btn-sm btn-secondary" onclick="window.showToast('Reminder set.','info')">Set Reminder</button></div>
+          </div>
+        </div>
+
+        <div class="issue-card">
+          <div class="issue-severity medium"></div>
+          <div class="issue-content">
+            <div style="display:flex;align-items:center;gap:8px;margin-bottom:6px"><span class="badge badge-gold" style="font-size:0.65rem;padding:2px 7px">Medium · Trust</span></div>
+            <div class="issue-title">Return policy not visible on product detail pages</div>
+            <div class="issue-desc">You offer a 30-day return policy, but it's only accessible via the footer link. First-time buyers — especially for higher-priced items — consistently cite return policy uncertainty as a reason for not purchasing. Adding a single line ("30-day free returns") directly below your Add to Cart button has a measurable impact on conversion.</div>
+            <div class="issue-meta"><span class="issue-impact">~$520/mo estimated impact</span><span class="issue-difficulty">Easy · ~20 min</span><span class="badge badge-neutral" style="font-size:0.65rem">No dev needed</span></div>
+            <div class="issue-actions"><button class="btn btn-sm btn-primary" data-mark-fixed>Mark as Fixed</button></div>
+          </div>
+        </div>
+
+        <div class="issue-card">
+          <div class="issue-severity medium"></div>
+          <div class="issue-content">
+            <div style="display:flex;align-items:center;gap:8px;margin-bottom:6px"><span class="badge badge-gold" style="font-size:0.65rem;padding:2px 7px">Medium · Copy</span></div>
+            <div class="issue-title">Product descriptions lead with features, not benefits</div>
+            <div class="issue-desc">Your top 3 revenue products all open their descriptions with material/spec information. "Made from 100% Merino Wool" tells customers what it's made of — "Stays warm even when wet, never scratchy against skin" tells them what it does for them. Benefit-led copy consistently outperforms feature-led copy, particularly for first-time visitors who don't yet trust your brand.</div>
+            <div class="issue-meta"><span class="issue-impact">~$480/mo estimated impact</span><span class="issue-difficulty">Easy · ~1-2hr per product</span><span class="badge badge-neutral" style="font-size:0.65rem">No dev needed</span></div>
+            <div class="issue-actions"><button class="btn btn-sm btn-primary" data-mark-fixed>Mark as Fixed</button></div>
+          </div>
+        </div>
+
+        <div class="issue-card">
+          <div class="issue-severity medium"></div>
+          <div class="issue-content">
+            <div style="display:flex;align-items:center;gap:8px;margin-bottom:6px"><span class="badge badge-gold" style="font-size:0.65rem;padding:2px 7px">Medium · Page Speed</span></div>
+            <div class="issue-title">High app script load on product pages (6 apps detected)</div>
+            <div class="issue-desc">We detected 6 third-party app scripts loading on your product pages. Apps that load scripts on every page (review widgets, chat tools, popup apps) each add 200-800ms to your Time to Interactive on mobile. At 6 apps, you're potentially adding 2-4 seconds — each second of delay is correlated with a 7% drop in conversion rate. Audit your active apps and disable any you're not actively using.</div>
+            <div class="issue-meta"><span class="issue-impact">~$340/mo estimated impact</span><span class="issue-difficulty">Medium · ~1 hour</span><span class="badge badge-neutral" style="font-size:0.65rem">No dev needed</span></div>
+            <div class="issue-actions"><button class="btn btn-sm btn-primary" data-mark-fixed>Mark as Fixed</button></div>
+          </div>
+        </div>
+
+        <!-- Fixed issues -->
+        <div style="margin-top:var(--space-lg);padding-top:var(--space-lg);border-top:1px solid var(--border)">
+          <div style="font-size:0.75rem;font-weight:600;text-transform:uppercase;letter-spacing:0.06em;color:var(--text-secondary);margin-bottom:var(--space-md)">✓ Fixed Issues (2)</div>
+          <div class="issue-card" style="opacity:0.5">
+            <div class="issue-severity low"></div>
+            <div class="issue-content">
+              <div style="display:flex;align-items:center;gap:8px;margin-bottom:6px"><span class="badge badge-green" style="font-size:0.65rem;padding:2px 7px">Fixed Apr 3</span></div>
+              <div class="issue-title">Add to Cart button obscured by sticky nav on iPhone SE</div>
+              <div class="issue-desc" style="color:var(--text-muted)">Fixed and verified. CVR improved from 1.1% → 1.6% on affected devices. Estimated revenue recovered: +$2,100/mo.</div>
+            </div>
+          </div>
+          <div class="issue-card mt-sm" style="opacity:0.5">
+            <div class="issue-severity low"></div>
+            <div class="issue-content">
+              <div style="display:flex;align-items:center;gap:8px;margin-bottom:6px"><span class="badge badge-green" style="font-size:0.65rem;padding:2px 7px">Fixed Apr 5</span></div>
+              <div class="issue-title">Missing payment badges on checkout page</div>
+              <div class="issue-desc" style="color:var(--text-muted)">Fixed and verified. Checkout-to-purchase rate improved by 4%. Estimated revenue recovered: +$1,360/mo.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+</div>
+<script src="../js/main.js"></script>
+<script>document.getElementById && (document.getElementById('sidebar-toggle') ? document.getElementById('sidebar-toggle').style.display='block' : null);</script>
+</body></html>

@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Welcome to Cromize — Setup Your Store</title>
+  <meta name="robots" content="noindex, nofollow" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="stylesheet" href="css/styles.css" />
+  <style>
+    .onboarding-wrap { min-height:100vh; display:flex; align-items:center; justify-content:center; padding:var(--space-xl) var(--space-lg); background:var(--bg-base); }
+    .onboarding-card { width:100%; max-width:600px; }
+    .step-indicators { display:flex; align-items:center; gap:8px; justify-content:center; margin-bottom:var(--space-2xl); }
+    .step-indicator { width:28px; height:28px; border-radius:50%; border:2px solid var(--border-strong); display:flex; align-items:center; justify-content:center; font-size:0.75rem; font-weight:700; color:var(--text-muted); transition:all var(--t-mid); }
+    .step-indicator.active { border-color:var(--gold); background:var(--gold-dim); color:var(--gold); }
+    .step-indicator.done { border-color:var(--green); background:var(--green-dim); color:var(--green); }
+    .step-connector { flex:1; height:2px; background:var(--border); max-width:60px; }
+    .onboarding-progress { height:3px; background:var(--bg-elevated); border-radius:3px; margin-bottom:var(--space-2xl); overflow:hidden; }
+    .onboarding-progress-fill { height:100%; background:var(--gold); border-radius:3px; width:25%; transition:width 0.5s ease; }
+  </style>
+</head>
+<body>
+<div class="onboarding-wrap">
+  <div class="onboarding-card">
+    <!-- Logo -->
+    <div style="text-align:center;margin-bottom:var(--space-2xl)">
+      <a href="index.html" class="nav-logo" style="justify-content:center">
+        <div class="nav-logo-icon"><svg viewBox="0 0 18 18" fill="none"><path d="M3 13 L7 7 L11 10 L15 3" stroke="#08080a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="15" cy="3" r="2" fill="#08080a"/></svg></div>
+        Cromize
+      </a>
+    </div>
+
+    <!-- Step indicators -->
+    <div class="step-indicators">
+      <div class="step-indicator active" id="ind-1">1</div>
+      <div class="step-connector"></div>
+      <div class="step-indicator" id="ind-2">2</div>
+      <div class="step-connector"></div>
+      <div class="step-indicator" id="ind-3">3</div>
+      <div class="step-connector"></div>
+      <div class="step-indicator" id="ind-4">4</div>
+    </div>
+
+    <!-- Progress bar -->
+    <div class="onboarding-progress"><div class="onboarding-progress-fill"></div></div>
+
+    <!-- Step 1: Welcome -->
+    <div id="step-1">
+      <div class="card card-gold" style="padding:var(--space-2xl);text-align:center">
+        <div style="font-size:3rem;margin-bottom:var(--space-lg)">👋</div>
+        <h1 class="display-md mb-md">Welcome to Cromize!</h1>
+        <p class="body-lg text-secondary mb-xl">You're about 3 minutes away from knowing exactly what's costing your store sales. Let's get everything set up so your first audit can start running right away.</p>
+        <div style="background:var(--bg-base);border-radius:var(--r-lg);padding:var(--space-lg);margin-bottom:var(--space-xl);text-align:left">
+          <div style="font-size:0.75rem;font-weight:600;text-transform:uppercase;letter-spacing:0.06em;color:var(--text-secondary);margin-bottom:var(--space-md)">What's happening right now</div>
+          <div style="display:flex;flex-direction:column;gap:10px">
+            <div style="display:flex;gap:10px;align-items:center"><div style="width:8px;height:8px;background:var(--green);border-radius:50%;flex-shrink:0;animation:pulse 2s infinite"></div><span class="body-sm text-secondary">Connected to your Shopify store ✓</span></div>
+            <div style="display:flex;gap:10px;align-items:center"><div style="width:8px;height:8px;background:var(--gold);border-radius:50%;flex-shrink:0;animation:pulse 2s infinite"></div><span class="body-sm text-secondary">Pulling your store data (orders, products, analytics)…</span></div>
+            <div style="display:flex;gap:10px;align-items:center"><div style="width:8px;height:8px;background:var(--border-strong);border-radius:50%;flex-shrink:0"></div><span class="body-sm text-secondary" style="color:var(--text-muted)">Audit will run tonight and be ready by morning</span></div>
+          </div>
+        </div>
+        <button class="btn btn-primary btn-xl w-full" onclick="nextStep(1, 4)">Let's Set Things Up →</button>
+      </div>
+    </div>
+
+    <!-- Step 2: Plan selection -->
+    <div id="step-2" style="display:none">
+      <div class="card" style="padding:var(--space-2xl)">
+        <h2 class="display-md mb-sm">Choose Your Plan</h2>
+        <p class="body-md text-secondary mb-xl">All plans include a 14-day free trial. No credit card required today — Shopify will prompt you when the trial ends.</p>
+        <div style="display:flex;flex-direction:column;gap:var(--space-md);margin-bottom:var(--space-xl)">
+          <label style="cursor:pointer">
+            <input type="radio" name="plan" value="starter" style="display:none" id="plan-starter">
+            <div onclick="this.previousElementSibling.checked=true;selectPlan('starter')" id="plan-card-starter" style="border:2px solid var(--border);border-radius:var(--r-lg);padding:var(--space-lg);transition:border-color var(--t-fast);display:flex;justify-content:space-between;align-items:center">
+              <div><div style="font-weight:700;margin-bottom:4px">Starter</div><div class="body-xs text-secondary">Full audit, top 10 issues, monthly refresh</div></div>
+              <div style="text-align:right"><div style="font-family:var(--font-display);font-size:1.4rem;font-weight:800">$29<span style="font-size:0.9rem;font-weight:400">/mo</span></div></div>
+            </div>
+          </label>
+          <label style="cursor:pointer">
+            <input type="radio" name="plan" value="growth" style="display:none" id="plan-growth" checked>
+            <div onclick="this.previousElementSibling.checked=true;selectPlan('growth')" id="plan-card-growth" style="border:2px solid var(--gold);border-radius:var(--r-lg);padding:var(--space-lg);background:var(--gold-dim);display:flex;justify-content:space-between;align-items:center">
+              <div><div style="font-weight:700;margin-bottom:4px">Growth <span class="badge badge-gold" style="font-size:0.65rem;margin-left:8px">Most Popular</span></div><div class="body-xs text-secondary">Everything in Starter + weekly monitoring, AOV engine, fix tracking</div></div>
+              <div style="text-align:right"><div style="font-family:var(--font-display);font-size:1.4rem;font-weight:800">$79<span style="font-size:0.9rem;font-weight:400">/mo</span></div></div>
+            </div>
+          </label>
+          <label style="cursor:pointer">
+            <input type="radio" name="plan" value="agency" style="display:none" id="plan-agency">
+            <div onclick="this.previousElementSibling.checked=true;selectPlan('agency')" id="plan-card-agency" style="border:2px solid var(--border);border-radius:var(--r-lg);padding:var(--space-lg);transition:border-color var(--t-fast);display:flex;justify-content:space-between;align-items:center">
+              <div><div style="font-weight:700;margin-bottom:4px">Agency</div><div class="body-xs text-secondary">10 stores, white-label reports, Slack alerts</div></div>
+              <div style="text-align:right"><div style="font-family:var(--font-display);font-size:1.4rem;font-weight:800">$199<span style="font-size:0.9rem;font-weight:400">/mo</span></div></div>
+            </div>
+          </label>
+        </div>
+        <div style="display:flex;gap:var(--space-md)">
+          <button class="btn btn-secondary" onclick="prevStep(2)">← Back</button>
+          <button class="btn btn-primary" style="flex:1" onclick="nextStep(2, 4)">Continue with Selected Plan →</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Step 3: Notifications -->
+    <div id="step-3" style="display:none">
+      <div class="card" style="padding:var(--space-2xl)">
+        <h2 class="display-md mb-sm">Stay in the Loop</h2>
+        <p class="body-md text-secondary mb-xl">Cromize's insights are only useful if they reach you. Choose how you want to be notified.</p>
+        <div style="display:flex;flex-direction:column;gap:var(--space-lg);margin-bottom:var(--space-xl)">
+          <div style="display:flex;justify-content:space-between;align-items:center;padding-bottom:var(--space-lg);border-bottom:1px solid var(--border)">
+            <div><div style="font-weight:600;font-size:0.9rem">Weekly digest email</div><div class="body-xs text-secondary mt-xs">5-minute Monday summary: CVR, AOV, what's new.</div></div>
+            <label style="cursor:pointer"><input type="checkbox" checked style="accent-color:var(--gold);width:18px;height:18px"></label>
+          </div>
+          <div style="display:flex;justify-content:space-between;align-items:center;padding-bottom:var(--space-lg);border-bottom:1px solid var(--border)">
+            <div><div style="font-weight:600;font-size:0.9rem">Immediate alerts for new high-priority issues</div><div class="body-xs text-secondary mt-xs">Know within hours when something new is costing you sales.</div></div>
+            <label style="cursor:pointer"><input type="checkbox" checked style="accent-color:var(--gold);width:18px;height:18px"></label>
+          </div>
+          <div style="display:flex;justify-content:space-between;align-items:center">
+            <div><div style="font-weight:600;font-size:0.9rem">Fix verification results</div><div class="body-xs text-secondary mt-xs">Confirmation email when we verify a fix worked.</div></div>
+            <label style="cursor:pointer"><input type="checkbox" checked style="accent-color:var(--gold);width:18px;height:18px"></label>
+          </div>
+        </div>
+        <div style="display:flex;gap:var(--space-md)">
+          <button class="btn btn-secondary" onclick="prevStep(3)">← Back</button>
+          <button class="btn btn-primary" style="flex:1" onclick="nextStep(3, 4)">Save & Continue →</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Step 4: Done -->
+    <div id="step-4" style="display:none">
+      <div class="card card-gold" style="padding:var(--space-2xl);text-align:center">
+        <div style="font-size:3.5rem;margin-bottom:var(--space-lg)">🎉</div>
+        <h2 class="display-md mb-md">You're All Set!</h2>
+        <p class="body-lg text-secondary mb-xl">Your audit is running. We'll have your first report ready within 24 hours — we'll send you an email when it's done. In the meantime, here's your dashboard.</p>
+        <div style="background:var(--bg-base);border-radius:var(--r-lg);padding:var(--space-lg);margin-bottom:var(--space-xl);text-align:left">
+          <div style="font-size:0.75rem;font-weight:600;text-transform:uppercase;letter-spacing:0.06em;color:var(--text-secondary);margin-bottom:var(--space-md)">What to expect</div>
+          <ul style="display:flex;flex-direction:column;gap:10px">
+            <li class="body-sm text-secondary" style="display:flex;gap:8px"><span style="color:var(--gold)">→</span>First audit results in your inbox within 24 hours</li>
+            <li class="body-sm text-secondary" style="display:flex;gap:8px"><span style="color:var(--gold)">→</span>Issues ranked by revenue impact — fix the biggest leak first</li>
+            <li class="body-sm text-secondary" style="display:flex;gap:8px"><span style="color:var(--gold)">→</span>Step-by-step fix instructions for every issue found</li>
+            <li class="body-sm text-secondary" style="display:flex;gap:8px"><span style="color:var(--gold)">→</span>Most stores see a measurable improvement within 2 weeks</li>
+          </ul>
+        </div>
+        <a href="dashboard/index.html" class="btn btn-primary btn-xl w-full">Go to My Dashboard →</a>
+        <p class="body-xs text-secondary" style="margin-top:var(--space-md)">Questions? Email <a href="mailto:info@cromize.com" style="color:var(--gold)">info@cromize.com</a> anytime.</p>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="js/main.js"></script>
+<script>
+function selectPlan(plan) {
+  ['starter','growth','agency'].forEach(p => {
+    const card = document.getElementById('plan-card-'+p);
+    card.style.border = p===plan ? '2px solid var(--gold)' : '2px solid var(--border)';
+    card.style.background = p===plan ? 'var(--gold-dim)' : '';
+  });
+}
+</script>
+</body></html>

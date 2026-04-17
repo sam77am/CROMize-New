@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Settings — Cromize</title>
+  <meta name="robots" content="noindex, nofollow" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="stylesheet" href="../css/styles.css" />
+</head>
+<body>
+<div class="app-layout">
+  <aside class="sidebar">
+    <div class="sidebar-logo"><a href="../index.html" style="display:flex;align-items:center;gap:10px;color:inherit"><div class="nav-logo-icon" style="width:28px;height:28px"><svg viewBox="0 0 18 18" fill="none"><path d="M3 13 L7 7 L11 10 L15 3" stroke="#08080a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="15" cy="3" r="2" fill="#08080a"/></svg></div>Cromize</a></div>
+    <nav class="sidebar-nav">
+      <div class="sidebar-section-label">Overview</div>
+      <a href="index.html" class="sidebar-link"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="1" y="1" width="6" height="6" rx="1"/><rect x="9" y="1" width="6" height="6" rx="1"/><rect x="1" y="9" width="6" height="6" rx="1"/><rect x="9" y="9" width="6" height="6" rx="1"/></svg>Dashboard</a>
+      <a href="audit.html" class="sidebar-link"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="8" cy="8" r="6"/><path d="M8 5v3l2 1"/></svg>Audit Report<span class="badge-count">7</span></a>
+      <a href="aov.html" class="sidebar-link"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 12 L5 7 L9 9 L14 3"/><circle cx="14" cy="3" r="1.5" fill="currentColor"/></svg>AOV Opportunities</a>
+      <div class="sidebar-section-label">Account</div>
+      <a href="settings.html" class="sidebar-link active"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="8" cy="8" r="2.5"/><path d="M8 1v2M8 13v2M1 8h2M13 8h2M3.05 3.05l1.41 1.41M11.54 11.54l1.41 1.41"/></svg>Settings</a>
+      <a href="../index.html" class="sidebar-link"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 2H2v12h4M10 11l4-3-4-3M14 8H6"/></svg>Back to Website</a>
+    </nav>
+    <div class="sidebar-footer"><div class="sidebar-store"><div class="sidebar-store-icon"><svg viewBox="0 0 16 16" fill="none" stroke="var(--gold)" stroke-width="1.5"><path d="M1 4h14l-1 8H2L1 4z"/><path d="M5 4V3a2 2 0 0 1 4 0v1"/></svg></div><div><div class="sidebar-store-name">my-store.myshopify.com</div><div class="sidebar-store-plan">Growth Plan</div></div></div></div>
+  </aside>
+
+  <main class="app-main">
+    <header class="app-header">
+      <div><div class="app-header-title">Settings</div><div class="app-header-sub">Manage your account, notifications, and subscription</div></div>
+    </header>
+
+    <div class="app-body">
+      <div style="display:grid;grid-template-columns:200px 1fr;gap:var(--space-xl)">
+        <!-- Settings nav -->
+        <div>
+          <div style="display:flex;flex-direction:column;gap:2px">
+            <button onclick="showSettingsTab('account')" class="sidebar-link active" id="tab-account" style="cursor:pointer;width:100%;text-align:left">Account</button>
+            <button onclick="showSettingsTab('notifications')" class="sidebar-link" id="tab-notifications" style="cursor:pointer;width:100%;text-align:left">Notifications</button>
+            <button onclick="showSettingsTab('store')" class="sidebar-link" id="tab-store" style="cursor:pointer;width:100%;text-align:left">Store</button>
+            <button onclick="showSettingsTab('billing')" class="sidebar-link" id="tab-billing" style="cursor:pointer;width:100%;text-align:left">Billing</button>
+            <button onclick="showSettingsTab('danger')" class="sidebar-link" id="tab-danger" style="cursor:pointer;width:100%;text-align:left;color:var(--red)">Danger Zone</button>
+          </div>
+        </div>
+
+        <!-- Settings panels -->
+        <div>
+          <!-- Account -->
+          <div id="panel-account" class="card" style="padding:var(--space-xl)">
+            <h2 style="font-family:var(--font-display);font-size:1.1rem;font-weight:700;margin-bottom:var(--space-xl)">Account Details</h2>
+            <div class="input-group"><label class="input-label">Full Name</label><input class="input-field" type="text" value="Store Owner" /></div>
+            <div class="input-group"><label class="input-label">Email Address</label><input class="input-field" type="email" value="owner@mystore.com" /></div>
+            <div class="input-group"><label class="input-label">Shopify Store URL</label><input class="input-field" type="text" value="my-store.myshopify.com" disabled style="opacity:0.5" /></div>
+            <div style="display:flex;justify-content:flex-end"><button class="btn btn-primary" onclick="window.showToast('Account details saved.')">Save Changes</button></div>
+          </div>
+
+          <!-- Notifications (hidden by default) -->
+          <div id="panel-notifications" class="card" style="padding:var(--space-xl);display:none">
+            <h2 style="font-family:var(--font-display);font-size:1.1rem;font-weight:700;margin-bottom:var(--space-xl)">Notification Preferences</h2>
+            <div style="display:flex;flex-direction:column;gap:var(--space-lg)">
+              <div style="display:flex;justify-content:space-between;align-items:center;padding-bottom:var(--space-lg);border-bottom:1px solid var(--border)">
+                <div><div style="font-weight:600;font-size:0.9rem">Weekly digest email</div><div class="body-xs text-secondary mt-xs">Your Monday morning performance summary with CVR, AOV, and top issues.</div></div>
+                <label style="cursor:pointer"><input type="checkbox" checked style="accent-color:var(--gold);width:16px;height:16px"></label>
+              </div>
+              <div style="display:flex;justify-content:space-between;align-items:center;padding-bottom:var(--space-lg);border-bottom:1px solid var(--border)">
+                <div><div style="font-weight:600;font-size:0.9rem">New high-priority issue alerts</div><div class="body-xs text-secondary mt-xs">Immediate email when a new high-priority issue is detected in your store.</div></div>
+                <label style="cursor:pointer"><input type="checkbox" checked style="accent-color:var(--gold);width:16px;height:16px"></label>
+              </div>
+              <div style="display:flex;justify-content:space-between;align-items:center;padding-bottom:var(--space-lg);border-bottom:1px solid var(--border)">
+                <div><div style="font-weight:600;font-size:0.9rem">Fix verification results</div><div class="body-xs text-secondary mt-xs">Notification when we verify a fix you marked as complete.</div></div>
+                <label style="cursor:pointer"><input type="checkbox" checked style="accent-color:var(--gold);width:16px;height:16px"></label>
+              </div>
+              <div style="display:flex;justify-content:space-between;align-items:center">
+                <div><div style="font-weight:600;font-size:0.9rem">Product updates and tips</div><div class="body-xs text-secondary mt-xs">Occasional emails about new Cromize features and CRO tips.</div></div>
+                <label style="cursor:pointer"><input type="checkbox" style="accent-color:var(--gold);width:16px;height:16px"></label>
+              </div>
+            </div>
+            <div style="display:flex;justify-content:flex-end;margin-top:var(--space-xl)"><button class="btn btn-primary" onclick="window.showToast('Notification preferences saved.')">Save Preferences</button></div>
+          </div>
+
+          <!-- Store -->
+          <div id="panel-store" class="card" style="padding:var(--space-xl);display:none">
+            <h2 style="font-family:var(--font-display);font-size:1.1rem;font-weight:700;margin-bottom:var(--space-xl)">Store Settings</h2>
+            <div class="input-group"><label class="input-label">Store Name</label><input class="input-field" type="text" value="My Shopify Store" /></div>
+            <div class="input-group"><label class="input-label">Primary Currency</label><select class="input-field"><option>USD — US Dollar</option><option>GBP — British Pound</option><option>EUR — Euro</option><option>CAD — Canadian Dollar</option><option>AUD — Australian Dollar</option></select></div>
+            <div class="input-group"><label class="input-label">Audit refresh frequency</label><select class="input-field"><option>Weekly (Growth plan)</option><option disabled>Daily (Not available on current plan)</option></select></div>
+            <div style="display:flex;justify-content:flex-end"><button class="btn btn-primary" onclick="window.showToast('Store settings saved.')">Save Settings</button></div>
+          </div>
+
+          <!-- Billing -->
+          <div id="panel-billing" class="card" style="padding:var(--space-xl);display:none">
+            <h2 style="font-family:var(--font-display);font-size:1.1rem;font-weight:700;margin-bottom:var(--space-xl)">Subscription & Billing</h2>
+            <div style="background:var(--bg-elevated);border-radius:var(--r-lg);padding:var(--space-lg);margin-bottom:var(--space-xl)">
+              <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:var(--space-md)"><span style="font-weight:600">Current Plan</span><span class="badge badge-gold">Growth · $79/mo</span></div>
+              <div style="display:flex;justify-content:space-between;font-size:0.85rem;color:var(--text-secondary);margin-bottom:8px"><span>Next billing date</span><span>May 17, 2026</span></div>
+              <div style="display:flex;justify-content:space-between;font-size:0.85rem;color:var(--text-secondary)"><span>Billing managed by</span><span>Shopify App Billing</span></div>
+            </div>
+            <div style="display:flex;gap:var(--space-md);flex-wrap:wrap">
+              <a href="../pricing.html" class="btn btn-primary">Upgrade to Agency →</a>
+              <button class="btn btn-secondary" onclick="window.showToast('Redirecting to Shopify billing portal...','info')">Manage in Shopify Admin</button>
+            </div>
+            <div class="alert alert-gold mt-xl">
+              <span>ℹ</span>
+              <span>Subscription changes and cancellations are handled through your <strong>Shopify Admin → Apps → Cromize</strong>. Cromize does not process payments directly.</span>
+            </div>
+          </div>
+
+          <!-- Danger Zone -->
+          <div id="panel-danger" class="card" style="padding:var(--space-xl);border-color:rgba(239,68,68,0.2);display:none">
+            <h2 style="font-family:var(--font-display);font-size:1.1rem;font-weight:700;margin-bottom:var(--space-xl);color:var(--red)">Danger Zone</h2>
+            <div style="display:flex;flex-direction:column;gap:var(--space-xl)">
+              <div style="display:flex;justify-content:space-between;align-items:center;padding-bottom:var(--space-lg);border-bottom:1px solid var(--border)">
+                <div><div style="font-weight:600;font-size:0.9rem">Reset all audit data</div><div class="body-xs text-secondary mt-xs">Wipes all your audit history and restarts from scratch. Cannot be undone.</div></div>
+                <button class="btn btn-secondary btn-sm" onclick="if(confirm('Are you sure? This deletes all your audit history.')){window.showToast('Audit data reset.','error')}">Reset Data</button>
+              </div>
+              <div style="display:flex;justify-content:space-between;align-items:center">
+                <div><div style="font-weight:600;font-size:0.9rem;color:var(--red)">Cancel Subscription & Uninstall</div><div class="body-xs text-secondary mt-xs">Cancels your Cromize subscription and removes all your data. Do this from Shopify Admin for a clean uninstall.</div></div>
+                <button class="btn btn-danger btn-sm" onclick="window.showToast('Go to Shopify Admin → Apps → Cromize to uninstall.','info')">Uninstall App</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+</div>
+<script src="../js/main.js"></script>
+<script>
+function showSettingsTab(tab) {
+  ['account','notifications','store','billing','danger'].forEach(t => {
+    document.getElementById('panel-'+t).style.display = t === tab ? '' : 'none';
+    document.getElementById('tab-'+t).classList.toggle('active', t === tab);
+  });
+}
+</script>
+</body></html>
